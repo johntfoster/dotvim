@@ -1,3 +1,4 @@
+" This is a silly change
 " Modeline and Notes {
 " vim: set foldmarker={,} foldlevel=0 foldmethod=marker spell:
 "
