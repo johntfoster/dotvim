@@ -296,32 +296,3 @@
 	endif
 " }
 
-" Not quite working yet
-"function InitializeDirectories()
-  "let separator = "."
-  "let parent = $HOME 
-  "let prefix = '.vim'
-  "let dir_list = { 
-			  "\ 'backup': 'backupdir', 
-			  "\ 'views': 'viewdir', 
-			  "\ 'swap': 'directory' }
-
-  "for [dirname, settingname] in items(dir_list)
-	  "let directory = parent . '/' . prefix . dirname . "/"
-	  "if exists("*mkdir")
-		  "if !isdirectory(directory)
-			  "call mkdir(directory)
-		  "endif
-	  "endif
-	  "if !isdirectory(directory)
-		  "echo "Warning: Unable to create backup directory: " . directory
-		  "echo "Try: mkdir -p " . directory
-	  "else  
-		  "" Adding an extra trailing slash so it stores the path and not just the
-		  "" filename so there aren't collisions for backups
-		  "" Windows Vista / 7 has UAC issues, so setting $temp as fallback
-		  "exec "set " . settingname . "='" . directory . "/'," . $temp
-	  "endif
-  "endfor
-"endfunction
-"call InitializeDirectories() 
