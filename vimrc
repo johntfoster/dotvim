@@ -62,7 +62,7 @@
 " }
 
 " Vim UI {
-	color molokai     	       		" load a colorscheme
+	color ir_black                  " load a colorscheme
 	set tabpagemax=15 				" only show 15 tabs
 	set showmode                   	" display the current mode
 
