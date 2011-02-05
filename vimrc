@@ -1,7 +1,7 @@
 " Modeline and Notes {
 " vim: set foldmarker={,} foldlevel=0 foldmethod=marker spell:
 "
-" 	This is the personal .vimrc file of Steve Francia.
+" 	This is the personal .vimrc file of John T. Foster
 " 	While much of it is beneficial for general use, I would
 " 	recommend picking out the parts you want and understand.
 "
@@ -112,9 +112,9 @@
 	set shiftwidth=4               	" use indents of 4 spaces
 	set noexpandtab 	       		" tabs are tabs, not spaces
 	set tabstop=4 					" an indentation every four columns
-	"set matchpairs+=<:>            	" match, to be used with % 
+	set matchpairs+=<:>            	" match, to be used with % 
 	set pastetoggle=<F12>          	" pastetoggle (sane indentation on pastes)
-	"set comments=sl:/*,mb:*,elx:*/  " auto format comment blocks
+	set comments=sl:/*,mb:*,elx:*/  " auto format comment blocks
 " }
 
 " Key Mappings {
@@ -136,8 +136,13 @@
 
 	"Mapping for Ack
 	nnoremap <leader>a :Ack
-	
+
+	"Open NERDTree
 	nmap <leader>n :NERDTree<cr>
+	
+	"Open a new tab
+	imap <leader>nt <ESC>:tabnew<CR>
+	map <leader>nt :tabnew<CR>
 	
 	" Easier moving in tabs and windows
 	map <C-h> <C-w>h
@@ -253,7 +258,11 @@
 		inoremap <expr> <C-u>      pumvisible() ? "\<PageUp>\<C-p>\<C-n>" : "\<C-u>"
 
 		" automatically open and close the popup menu / preview window
-		au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
+		augroup vimrc_autocmds
+			au!
+			au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
+		augroup END
+
 		set completeopt=menu,longest,preview
 	" }
 	
@@ -262,7 +271,7 @@
 	" }
 
 	" EasyTags {
-		let g:easytags_cmd = '/usr/local/bin/ctags'
+		let g:easytags_cmd = '/opt/local/bin/ctags'
 	" }
 
 	" Delimitmate {
@@ -279,7 +288,7 @@
 
 	" SnipMate {
 		" Setting the author var
-		let g:snips_author = 'Steve Francia <steve.francia@gmail.com>'
+		let g:snips_author = 'John T. Foster <johntfosterjr@gmail.com>'
 		" Shortcut for reloading snippets, useful when developing
 		nnoremap ,smr <esc>:exec ReloadAllSnippets()<cr>
 	" }
