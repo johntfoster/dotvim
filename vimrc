@@ -257,11 +257,8 @@
 		inoremap <expr> <C-d> 	   pumvisible() ? "\<PageDown>\<C-p>\<C-n>" : "\<C-d>"
 		inoremap <expr> <C-u>      pumvisible() ? "\<PageUp>\<C-p>\<C-n>" : "\<C-u>"
 
-		" automatically open and close the popup menu / preview window
-		augroup vimrc_autocmds
-			au!
-			au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
-		augroup END
+		"automatically open and close the popup menu / preview window
+		au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 
 		set completeopt=menu,longest,preview
 	" }
