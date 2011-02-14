@@ -52,3 +52,6 @@
 [submodule "bundle/screen"]
 	path = bundle/screen
 	url = git://github.com/ervandew/screen.git
+[submodule "bundle/matlab"]
+	path = bundle/matlab
+	url = git://github.com/vim-scripts/matlab.vim.git
