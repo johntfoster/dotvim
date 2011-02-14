@@ -43,3 +43,12 @@
 [submodule "bundle/autocomplpop"]
 	path = bundle/autocomplpop
 	url = git://github.com/vim-scripts/AutoComplPop.git
+[submodule "bundle/camelcasemotion"]
+	path = bundle/camelcasemotion
+	url = git://github.com/vim-scripts/camelcasemotion.git
+[submodule "bundle/twitvim"]
+	path = bundle/twitvim
+	url = git://github.com/vim-scripts/TwitVim.git
+[submodule "bundle/screen"]
+	path = bundle/screen
+	url = git://github.com/ervandew/screen.git

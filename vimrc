@@ -294,6 +294,10 @@
     	let g:alternateSearchPath = 'sfr:../source,sfr:../src,sfr:../include,sfr:../inc'
 	" }
 
+	" TwitVim {
+		let twitvim_login="johntfoster:football1"
+	" }
+
 " GUI Settings {
 	" GVIM- (here instead of .gvimrc)
 	if has('gui_running')
