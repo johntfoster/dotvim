@@ -55,3 +55,6 @@
 [submodule "bundle/matlab"]
 	path = bundle/matlab
 	url = git://github.com/vim-scripts/matlab.vim.git
+[submodule "bundle/gnuplot"]
+	path = bundle/gnuplot
+	url = git://github.com/vim-scripts/gnuplot.vim.git

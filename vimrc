@@ -140,6 +140,9 @@
 	"Open NERDTree
 	nmap <leader>n :NERDTree<cr>
 	
+	"Run current file in shell
+	nmap <leader>sh :w <cr> :!chmod a+x % && ./%<cr>
+
 	"Open a new tab
 	imap <leader>nt <ESC>:tabnew<CR>
 	map <leader>nt :tabnew<CR>
