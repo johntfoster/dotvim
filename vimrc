@@ -107,7 +107,7 @@
 	set wrap                     	" wrap long lines
 	set textwidth=79                " set text length
 	set formatoptions=qrn1
-	set colorcolumn=85              " creates a color column at column 85
+	set colorcolumn=80              " creates a color column at column 85
 	set autoindent                 	" indent at the same level of the previous line
 	set shiftwidth=4               	" use indents of 4 spaces
 	set expandtab   	       		" tabs are  spaces
