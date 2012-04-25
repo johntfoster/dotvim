@@ -58,9 +58,6 @@
 [submodule "bundle/gnuplot"]
 	path = bundle/gnuplot
 	url = git://github.com/vim-scripts/gnuplot.vim.git
-[submodule "vim-addon-manager"]
-	path = vim-addon-manager
-	url = https://github.com/MarcWeber/vim-addon-manager.git
 [submodule "bundle/vim-addon-manager"]
 	path = bundle/vim-addon-manager
 	url = https://github.com/MarcWeber/vim-addon-manager.git
