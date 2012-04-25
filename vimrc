@@ -24,7 +24,7 @@
 	" Setup Bundle Support {
 	" The next two lines ensure that the ~/.vim/bundle/ system works
 		runtime! bundle/pathogen/autoload/pathogen.vim
-        silent! call pathogen#infect('~/.vim/bundle')
+        silent! call pathogen#infect()
         silent! call pathogen#helptags()
 	" }
 " } 
