@@ -64,3 +64,9 @@
 [submodule "bundle/vim-ipython"]
 	path = bundle/vim-ipython
 	url = https://github.com/ivanov/vim-ipython.git
+[submodule "bundle/vim-colors-ir_black"]
+	path = bundle/vim-colors-ir_black
+	url = https://github.com/promisedlandt/vim-colors-ir_black
+[submodule "bundle/pathogen"]
+	path = bundle/pathogen
+	url = https://github.com/tpope/vim-pathogen.git
