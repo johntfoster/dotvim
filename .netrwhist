@@ -1,11 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =9
-let g:netrw_dirhist_1='/Users/john/Documents/LaTeX/CV/sections'
-let g:netrw_dirhist_2='/Users/john/Projects/Peridigm'
-let g:netrw_dirhist_3='/Users/john/Documents/LaTeX/CV'
-let g:netrw_dirhist_4='/Users/john/Projects/Peridigm2/src/core'
-let g:netrw_dirhist_5='/Users/john/Projects/Python/pySAS/exodus-5.21/exodus/build/cbind'
-let g:netrw_dirhist_6='/Users/john/Projects/Python/pySAS/exodus-5.21'
-let g:netrw_dirhist_7='/Users/john/Projects/Python/pySAS/exodus-5.21/exodus'
-let g:netrw_dirhist_8='/Users/john/Projects/trilinos/build'
-let g:netrw_dirhist_9='/Users/john/Projects/Peridigm/src/io/discretization'
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/Users/john/Documents/ME5013/Fall2012'
+let g:netrw_dirhist_2='/Users/john/Projects/Python/particles'
+let g:netrw_dirhist_3='/Users/john/Documents/ME5013/Fall2012'
+let g:netrw_dirhist_4='/Users/john/.vim/.git/info'

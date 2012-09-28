@@ -5,20 +5,11 @@
 " 	While much of it is beneficial for general use, I would
 " 	recommend picking out the parts you want and understand.
 "
-" 	You can find me at http://spf13.com
 " }
 
 " Environment {
 	" Basics {
 		set nocompatible 		" must be first line
-	" }
-
-	" Windows Compatible {
-		" On Windows, also use '.vim' instead of 'vimfiles'; this makes synchronization
-		" across (heterogeneous) systems easier. 
-		if has('win32') || has('win64')
-		  set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
-		endif
 	" }
 
 	" Setup Bundle Support {
@@ -108,7 +99,7 @@
 	set wrap                     	" wrap long lines
 	set textwidth=79                " set text length
 	set formatoptions=qrn1
-	set colorcolumn=80              " creates a color column at column 85
+	set colorcolumn=80              " creates a color column at column 80
 	set autoindent                 	" indent at the same level of the previous line
 	set shiftwidth=4               	" use indents of 4 spaces
 	set expandtab   	       		" tabs are  spaces
@@ -120,11 +111,11 @@
 
 " Key Mappings {
 	
-	"Clear a search
-	nnoremap <leader><space> :noh<cr>
-
 	"Change the <leader> key
 	let mapleader = ","	
+	
+    "Clear a search
+	nnoremap <leader><space> :noh<cr>
 
 	"Allow ; to be the same as :
 	nnoremap ; :
@@ -298,9 +289,6 @@
     	let g:alternateSearchPath = 'sfr:../source,sfr:../src,sfr:../include,sfr:../inc'
 	" }
 
-	" TwitVim {
-		let twitvim_login="johntfoster:football1"
-	" }
 
 " GUI Settings {
 	" GVIM- (here instead of .gvimrc)
