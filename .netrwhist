@@ -1,6 +1,3 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
-let g:netrw_dirhist_1='/Users/john/Documents/ME5013/Fall2012'
-let g:netrw_dirhist_2='/Users/john/Projects/Python/particles'
-let g:netrw_dirhist_3='/Users/john/Documents/ME5013/Fall2012'
-let g:netrw_dirhist_4='/Users/john/.vim/.git/info'
+let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_1='/Users/fes788/projects/Peridigm/examples/tensile_test_new_input'
