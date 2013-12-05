@@ -9,3 +9,9 @@ Create symlinks:
 ````
     ln -s ~/.vim/vimrc ~/.vimrc
 ````
+
+Update bundles:
+
+````
+    :BundleInstall!
+````

@@ -40,7 +40,7 @@ Bundle 'wgibbs/vim-irblack'
 	
 " General {
 	set background=dark         " Assume a dark background
-	set term=builtin_ansi       " Make arrow and other keys work
+	set term=ansi               " Make arrow and other keys work
 	filetype plugin indent on  	" Automatically detect file types.
 	syntax on 					" syntax highlighting
 	set mouse=a					" automatically enable mouse usage
@@ -49,6 +49,7 @@ Bundle 'wgibbs/vim-irblack'
 	" If you use command-t plugin, it conflicts with this, comment it out.
      "autocmd BufEnter * if bufname("") !~ "^\[A-Za-z0-9\]*://" | lcd %:p:h | endif
 	scriptencoding utf-8
+	set encoding=utf-8
 	set autowrite                  " automatically write a file when leaving a modified buffer
 	set shortmess+=filmnrxoOtT     	" abbrev. of messages (avoids 'hit enter')
 	set viewoptions=folds,options,cursor,unix,slash " better unix / windows compatibility
