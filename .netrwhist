@@ -1,6 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
-let g:netrw_dirhist_1='/Users/fes788/projects/Peridigm/test/regression/Compression_QS_Explicit_3x2x2'
-let g:netrw_dirhist_2='/Users/fes788/projects/Peridigm/build/test/regression/Compression_QS_Explicit_3x2x2'
-let g:netrw_dirhist_3='/Users/fes788/projects/Peridigm/src/core'
-let g:netrw_dirhist_4='/Users/fes788/.ipython/profile_mpi'

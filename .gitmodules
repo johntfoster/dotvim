@@ -1,6 +1,0 @@
-[submodule "bundle/csapprox"]
-	path = bundle/csapprox
-	url = git://github.com/godlygeek/csapprox.git
-[submodule "bundle/autocomplpop"]
-	path = bundle/autocomplpop
-	url = git://github.com/vim-scripts/AutoComplPop.git

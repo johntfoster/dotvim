@@ -20,6 +20,8 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 Bundle 'scrooloose/syntastic'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'scrooloose/nerdtree'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-surround'
@@ -33,7 +35,6 @@ Bundle 'dantler/vim-alternate'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'Raimondi/delimitMate'
 Bundle 'wgibbs/vim-irblack'
-Bundle 'scrooloose/nerdcommenter'
 
 " }
 	
