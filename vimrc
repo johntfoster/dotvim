@@ -33,6 +33,7 @@ Bundle 'dantler/vim-alternate'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'Raimondi/delimitMate'
 Bundle 'wgibbs/vim-irblack'
+Bundle 'scrooloose/nerdcommenter'
 
 " }
 	
@@ -70,7 +71,7 @@ Bundle 'wgibbs/vim-irblack'
 " }
 
 " Vim UI {
-	colorscheme ir_black            " load a colorscheme
+	colorscheme solarized           " load a colorscheme
 	set tabpagemax=15 				" only show 15 tabs
 	set showmode                   	" display the current mode
 
