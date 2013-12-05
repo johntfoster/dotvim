@@ -12,13 +12,29 @@
 		set nocompatible 		" must be first line
 	" }
 
-	" Setup Bundle Support {
-	" The next two lines ensure that the ~/.vim/bundle/ system works
-		runtime! bundle/pathogen/autoload/pathogen.vim
-        silent! call pathogen#infect()
-        silent! call pathogen#helptags()
-	" }
 " } 
+
+" Bundles {
+"
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'scrooloose/syntastic'
+Bundle 'Valloric/YouCompleteMe'
+Bundle 'gmarik/vundle'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-markdown'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'tomtom/tlib_vim'
+Bundle 'MarcWeber/vim-addon-mw-utils'
+Bundle 'garbas/vim-snipmate'
+Bundle 'dantler/vim-alternate'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'Raimondi/delimitMate'
+Bundle 'wgibbs/vim-irblack'
+
+" }
 	
 " General {
 	set background=dark         " Assume a dark background
@@ -54,7 +70,7 @@
 " }
 
 " Vim UI {
-	color ir_black                  " load a colorscheme
+	colorscheme ir_black            " load a colorscheme
 	set tabpagemax=15 				" only show 15 tabs
 	set showmode                   	" display the current mode
 
@@ -70,10 +86,10 @@
 	endif
 
 	if has('statusline')
-		set laststatus=1           	" show statusline only if there are > 1 windows
+		set laststatus=2           	" show statusline only if there are > 1 windows
 		" Use the commented line if fugitive isn't installed
 		"set statusline=%<%f\ %=\:\b%n%y%m%r%w\ %l,%c%V\ %P " a statusline, also on steroids
-		set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
+		"set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 	endif
 
 	set backspace=indent,eol,start 	" backspace for dummys
@@ -181,114 +197,6 @@
 	au FocusLost * :wa
 
 " }
-
-" Plugins {
-
-	" VCSCommand {
-		let b:VCSCommandMapPrefix=',v'
-		let b:VCSCommandVCSType='git'
-		""let mapleader = "-"
-	" } 
-	
-	" PIV {
-		let g:DisableAutoPHPFolding = 0
-	" }
-	
-	" Supertab {
-		"let g:SuperTabDefaultCompletionType = "context"
-		let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
-	" }
-
-	" Misc { 
-		:map <C-F10> <Esc>:vsp<CR>:VTree<CR>
-		" map Control + F10 to Vtree
-
-		let g:checksyntax_auto = 0
-
-		"comment out line(s) in visual mode
-		vmap  o  :call NERDComment(1, 'toggle')<CR>
-		let g:NERDShutUp=1
-
-		let b:match_ignorecase = 1
-	" }
-
-	" ShowMarks {
-		let showmarks_include = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-		" Don't leave on by default, use :ShowMarksOn to enable
-		let g:showmarks_enable = 0
-		" For marks a-z
-		highlight ShowMarksHLl gui=bold guibg=LightBlue guifg=Blue
-		" For marks A-Z
-		highlight ShowMarksHLu gui=bold guibg=LightRed guifg=DarkRed
-		" For all other marks
-		highlight ShowMarksHLo gui=bold guibg=LightYellow guifg=DarkYellow
-		" For multiple marks on the same line.
-		highlight ShowMarksHLm gui=bold guibg=LightGreen guifg=DarkGreen
-	" }
-	
-	" OmniComplete {
-		"if has("autocmd") && exists("+omnifunc")
-			"autocmd Filetype *
-				"\if &omnifunc == "" |
-				"\setlocal omnifunc=syntaxcomplete#Complete |
-				"\endif
-		"endif
-
-		" Popup menu hightLight Group
-		"highlight Pmenu 	ctermbg=13 	guibg=DarkBlue
-		highlight PmenuSel 	ctermbg=7 	guibg=DarkBlue 		guifg=LightBlue
-		"highlight PmenuSbar ctermbg=7 	guibg=DarkGray
-		"highlight PmenuThumb 			guibg=Black
-
-		hi Pmenu  guifg=#000000 guibg=#F8F8F8 ctermfg=black ctermbg=Lightgray
-		hi PmenuSbar  guifg=#8A95A7 guibg=#F8F8F8 gui=NONE ctermfg=darkcyan ctermbg=lightgray cterm=NONE
-		hi PmenuThumb  guifg=#F8F8F8 guibg=#8A95A7 gui=NONE ctermfg=lightgray ctermbg=darkcyan cterm=NONE
-
-		" some convenient mappings 
-		inoremap <expr> <Esc>      pumvisible() ? "\<C-e>" : "\<Esc>"
-		"inoremap <expr> <CR>       pumvisible() ? "\<C-y>" : "\<CR>"
-		inoremap <expr> <Down>     pumvisible() ? "\<C-n>" : "\<Down>"
-		inoremap <expr> <Up>       pumvisible() ? "\<C-p>" : "\<Up>"
-		inoremap <expr> <C-d> 	   pumvisible() ? "\<PageDown>\<C-p>\<C-n>" : "\<C-d>"
-		inoremap <expr> <C-u>      pumvisible() ? "\<PageUp>\<C-p>\<C-n>" : "\<C-u>"
-
-		"automatically open and close the popup menu / preview window
-		au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
-
-		set completeopt=menu,longest,preview
-	" }
-	
-	" Ctags {
-		set tags=./tags;/,~/.vimtags
-	" }
-
-	" EasyTags {
-		let g:easytags_cmd = '/opt/local/bin/ctags'
-	" }
-
-	" Delimitmate {
-		au FileType * let b:delimitMate_autoclose = 1
-
-		" If using html auto complete (complete closing tag)
-        au FileType xml,html,xhtml let b:delimitMate_matchpairs = "(:),[:],{:}"
-	" }
-	
-	" AutoCloseTag {
-		" Make it so AutoCloseTag works for xml and xhtml files as well
-		au FileType xhtml,xml ru ftplugin/html/autoclosetag.vim
-	" }
-
-	" SnipMate {
-		" Setting the author var
-		let g:snips_author = 'John T. Foster <johntfosterjr@gmail.com>'
-		" Shortcut for reloading snippets, useful when developing
-		nnoremap ,smr <esc>:exec ReloadAllSnippets()<cr>
-	" }
-	
-	" Alternate {
-    	let g:alternateSearchPath = 'sfr:../source,sfr:../src,sfr:../include,sfr:../inc'
-	" }
-
 
 " GUI Settings {
 	" GVIM- (here instead of .gvimrc)
