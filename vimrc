@@ -27,29 +27,41 @@ Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-markdown'
-Bundle 'Lokaltog/vim-powerline'
 Bundle 'tomtom/tlib_vim'
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'garbas/vim-snipmate'
+Bundle 'honza/vim-snippets'
 Bundle 'dantler/vim-alternate'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'Raimondi/delimitMate'
 Bundle 'wgibbs/vim-irblack'
+Bundle 'gerw/vim-latex-suite'
+Bundle 'vim-pandoc/vim-pandoc'
 
+" }
+
+" Powerline {
+
+    python sys.path.append("/usr/local/lib/python2.7/site-packages/powerline/")
+    python from powerline.vim import setup as powerline_setup
+    python powerline_setup()
+    python del powerline_setup
+    let g:Powerline_symbols = 'fancy'
 " }
 	
 " General {
 	set background=dark         " Assume a dark background
-	set term=ansi               " Make arrow and other keys work
-	filetype plugin indent on  	" Automatically detect file types.
+	set term=xterm-256color     " Make arrow and other keys work
 	syntax on 					" syntax highlighting
+    filetype on
+	filetype plugin indent on  	" Automatically detect file types.
 	set mouse=a					" automatically enable mouse usage
 	"set autochdir 				" always switch to the current file directory.. 
 	" not every vim is compiled with this, use the following line instead
 	" If you use command-t plugin, it conflicts with this, comment it out.
      "autocmd BufEnter * if bufname("") !~ "^\[A-Za-z0-9\]*://" | lcd %:p:h | endif
-	scriptencoding utf-8
 	set encoding=utf-8
+	set termencoding=utf-8
 	set autowrite                  " automatically write a file when leaving a modified buffer
 	set shortmess+=filmnrxoOtT     	" abbrev. of messages (avoids 'hit enter')
 	set viewoptions=folds,options,cursor,unix,slash " better unix / windows compatibility
@@ -81,18 +93,15 @@ Bundle 'wgibbs/vim-irblack'
 	hi cursorline guibg=#333333 	" highlight bg color of current line
 	hi CursorColumn guibg=#333333   " highlight cursor
 
-	if has('cmdline_info')
-		set ruler                  	" show the ruler
-		set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%) " a ruler on steroids
-		set showcmd                	" show partial commands in status line and
-									" selected characters/lines in visual mode
-	endif
+	"if has('cmdline_info')
+		"set ruler                  	" show the ruler
+		"set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%) " a ruler on steroids
+		"set showcmd                	" show partial commands in status line and
+									"" selected characters/lines in visual mode
+	"endif
 
 	if has('statusline')
 		set laststatus=2           	" show statusline only if there are > 1 windows
-		" Use the commented line if fugitive isn't installed
-		"set statusline=%<%f\ %=\:\b%n%y%m%r%w\ %l,%c%V\ %P " a statusline, also on steroids
-		"set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 	endif
 
 	set backspace=indent,eol,start 	" backspace for dummys
@@ -150,6 +159,7 @@ Bundle 'wgibbs/vim-irblack'
 
 	"Open NERDTree
 	nmap <leader>n :NERDTree<cr>
+    let NERDTreeMapOpenInTab='<ENTER?>'
 	
 	"Run current file in shell
 	nmap <leader>sh :w <cr> :!chmod a+x % && ./%<cr>
@@ -201,11 +211,42 @@ Bundle 'wgibbs/vim-irblack'
 
 " }
 
+" Code Folding for Markdown {
+
+function! MarkdownLevel(maxlevel)
+    if a:maxlevel >= 1 && getline(v:lnum) =~ '^# .*$'
+        return ">1"
+    endif
+    if a:maxlevel >= 2 && getline(v:lnum) =~ '^## .*$'
+        return ">2"
+    endif
+    if a:maxlevel >= 3 && getline(v:lnum) =~ '^### .*$'
+        return ">3"
+    endif
+    if a:maxlevel >= 4 && getline(v:lnum) =~ '^#### .*$'
+        return ">4"
+    endif
+    if a:maxlevel >= 5 && getline(v:lnum) =~ '^##### .*$'
+        return ">5"
+    endif
+    if a:maxlevel >= 6 && getline(v:lnum) =~ '^###### .*$'
+        return ">6"
+    endif
+    return "=" 
+endfunction
+
+au BufEnter *.md  setlocal foldexpr=MarkdownLevel(2)  
+au BufEnter *.md  setlocal foldmethod=expr     
+au BufEnter *.md  setlocal autoindent
+
+"}
+
 " GUI Settings {
 	" GVIM- (here instead of .gvimrc)
 	if has('gui_running')
 		set guioptions-=T          	" remove the toolbar
 		set lines=40               	" 40 lines of text instead of 24,
+        set guifont=Sauce\ Code\ Powerline:h13
 	endif
 " }
 
