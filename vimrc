@@ -35,6 +35,7 @@ Bundle 'dantler/vim-alternate'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'Raimondi/delimitMate'
 Bundle 'wgibbs/vim-irblack'
+Bundle 'vim-scripts/Align'
 Bundle 'gerw/vim-latex-suite'
 Bundle 'vim-pandoc/vim-pandoc'
 
