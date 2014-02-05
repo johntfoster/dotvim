@@ -42,7 +42,12 @@ Bundle 'vim-pandoc/vim-pandoc'
 
 " Powerline {
 
-    python sys.path.append("/usr/local/lib/python2.7/site-packages/powerline/")
+    let hostname = substitute(system('hostname'), '\n', '', '')
+    if hostname == "shamu.coe.utsa.edu"
+        python sys.path.append("~/.local/lib/python2.7/site-packages/powerline/")
+    else
+        python sys.path.append("/usr/local/lib/python2.7/site-packages/powerline/")
+    endif
     python from powerline.vim import setup as powerline_setup
     python powerline_setup()
     python del powerline_setup
