@@ -38,6 +38,9 @@ Bundle 'wgibbs/vim-irblack'
 Bundle 'vim-scripts/Align'
 Bundle 'gerw/vim-latex-suite'
 Bundle 'vim-pandoc/vim-pandoc'
+Bundle 'kakkyz81/evervim'
+Bundle 'tyru/open-browser.vim'
+Bundle 'christoomey/vim-tmux-navigator'
 
 " }
 
@@ -53,6 +56,14 @@ Bundle 'vim-pandoc/vim-pandoc'
     python powerline_setup()
     python del powerline_setup
     let g:Powerline_symbols = 'fancy'
+" }
+
+" Evervim {
+    let g:evervim_devtoken='S=s190:U=14a4910:E=14b95c95080:C=1443e182484:P=1cd:A=en-devtoken:V=2:H=518092723f58072eabca73f404bbf293'
+" }
+
+" YCM {
+    let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
 " }
 	
 " General {
@@ -214,6 +225,11 @@ Bundle 'vim-pandoc/vim-pandoc'
 
 	" Save on losing focus
 	au FocusLost * :wa
+
+    " Copy to clipboard
+    vmap <D-x> :!pbcopy<CR>  
+    vmap <D-c> :w !pbcopy<CR><CR>
+    set clipboard=unnamed
 
 " }
 
