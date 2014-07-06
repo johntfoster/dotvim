@@ -16,32 +16,33 @@
 
 " Bundles {
 "
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-Bundle 'scrooloose/syntastic'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'scrooloose/nerdtree'
-Bundle 'Valloric/YouCompleteMe'
-Bundle 'gmarik/vundle'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-markdown'
-Bundle 'tomtom/tlib_vim'
-Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle 'garbas/vim-snipmate'
-Bundle 'honza/vim-snippets'
-Bundle 'dantler/vim-alternate'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'Raimondi/delimitMate'
-Bundle 'wgibbs/vim-irblack'
-Bundle 'vim-scripts/Align'
-Bundle 'gerw/vim-latex-suite'
-Bundle 'vim-pandoc/vim-pandoc'
-Bundle 'kakkyz81/evervim'
-Bundle 'tyru/open-browser.vim'
-Bundle 'christoomey/vim-tmux-navigator'
-Bundle 'vim-scripts/jinja'
+Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'gmarik/vundle'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-markdown'
+Plugin 'tomtom/tlib_vim'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
+Plugin 'dantler/vim-alternate'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'Raimondi/delimitMate'
+Plugin 'wgibbs/vim-irblack'
+Plugin 'vim-scripts/Align'
+Plugin 'gerw/vim-latex-suite'
+Plugin 'vim-pandoc/vim-pandoc'
+Plugin 'kakkyz81/evervim'
+Plugin 'tyru/open-browser.vim'
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'vim-scripts/jinja'
+call vundle#end() 
 
 " }
 
