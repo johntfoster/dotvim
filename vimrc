@@ -41,6 +41,7 @@ Bundle 'vim-pandoc/vim-pandoc'
 Bundle 'kakkyz81/evervim'
 Bundle 'tyru/open-browser.vim'
 Bundle 'christoomey/vim-tmux-navigator'
+Bundle 'vim-scripts/jinja'
 
 " }
 
@@ -68,6 +69,7 @@ Bundle 'christoomey/vim-tmux-navigator'
 	
 " General {
 	set background=dark         " Assume a dark background
+	"set background=light       " Assume a dark background
 	set term=xterm-256color     " Make arrow and other keys work
 	syntax on 					" syntax highlighting
     filetype on
@@ -230,6 +232,9 @@ Bundle 'christoomey/vim-tmux-navigator'
     vmap <D-x> :!pbcopy<CR>  
     vmap <D-c> :w !pbcopy<CR><CR>
     set clipboard=unnamed
+
+    " Skim setup for forward-search
+    map <leader>r :w<CR>:silent !/Applications/Skim.app/Contents/SharedSupport/displayline <C-r>=line('.')<CR> %<.pdf %<CR>
 
 " }
 
