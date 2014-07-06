@@ -105,7 +105,7 @@ call vundle#end()
 " }
 
 " Vim UI {
-	colorscheme solarized           " load a colorscheme
+	:silent! colorscheme solarized           " load a colorscheme
 	set tabpagemax=15 				" only show 15 tabs
 	set showmode                   	" display the current mode
 
