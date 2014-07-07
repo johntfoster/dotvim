@@ -10,8 +10,21 @@ Create symlinks:
     ln -s ~/.vim/vimrc ~/.vimrc
 ````
 
+Update Vundle submodule
+
+````
+    git submodule init
+    git submodule update
+````
+
 Update bundles:
 
 ````
-    :BundleInstall!
+    :PluginInstall!
+````
+
+Or from the command line:
+
+````
+    vim +PluginInstall +qall
 ````
