@@ -42,6 +42,8 @@ Plugin 'kakkyz81/evervim'
 Plugin 'tyru/open-browser.vim'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'vim-scripts/jinja'
+Plugin 'ivanov/vim-ipython'
+Plugin 'benmills/vimux'
 call vundle#end() 
 
 " }
