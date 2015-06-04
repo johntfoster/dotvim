@@ -18,7 +18,6 @@
 "
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-
 Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
@@ -34,16 +33,15 @@ Plugin 'honza/vim-snippets'
 Plugin 'dantler/vim-alternate'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'Raimondi/delimitMate'
-Plugin 'wgibbs/vim-irblack'
 Plugin 'vim-scripts/Align'
 Plugin 'gerw/vim-latex-suite'
 Plugin 'vim-pandoc/vim-pandoc'
-Plugin 'kakkyz81/evervim'
 Plugin 'tyru/open-browser.vim'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'vim-scripts/jinja'
-Plugin 'ivanov/vim-ipython'
 Plugin 'benmills/vimux'
+Plugin 'wincent/command-t'
+Plugin 'ervandew/screen'
 call vundle#end() 
 
 " }
@@ -62,12 +60,12 @@ call vundle#end()
     let g:Powerline_symbols = 'fancy'
 " }
 
-" Evervim {
-    let g:evervim_devtoken='S=s190:U=14a4910:E=14b95c95080:C=1443e182484:P=1cd:A=en-devtoken:V=2:H=518092723f58072eabca73f404bbf293'
-" }
-
 " YCM {
     let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
+" }
+
+" Screen {
+    let g:ScreenImpl = 'Tmux'
 " }
 	
 " General {
@@ -182,6 +180,10 @@ call vundle#end()
 	"Open NERDTree
 	nmap <leader>n :NERDTree<cr>
     let NERDTreeMapOpenInTab='<ENTER?>'
+
+	"Open IPython
+	nmap <leader>ip :IPython<cr>
+	vmap <leader>ss :ScreenSend<cr>
 	
 	"Run current file in shell
 	nmap <leader>sh :w <cr> :!chmod a+x % && ./%<cr>
