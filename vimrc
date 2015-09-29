@@ -10,6 +10,9 @@
 " Environment {
 	" Basics {
 		set nocompatible 		" must be first line
+        if &shell =~# 'fish$'
+            set shell=bash
+        endif
 	" }
 
 " } 
@@ -42,6 +45,7 @@ Plugin 'vim-scripts/jinja'
 Plugin 'benmills/vimux'
 Plugin 'wincent/command-t'
 Plugin 'ervandew/screen'
+Plugin 'dag/vim-fish'
 call vundle#end() 
 
 " }
