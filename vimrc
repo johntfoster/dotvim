@@ -19,7 +19,7 @@
 
 " Bundles {
 "
-set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/.vim/bundle/vundle
 call vundle#begin()
 Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdcommenter'
@@ -31,7 +31,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-markdown'
 Plugin 'tomtom/tlib_vim'
 Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'garbas/vim-snipmate'
+Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'dantler/vim-alternate'
 Plugin 'altercation/vim-colors-solarized'
@@ -51,13 +51,7 @@ call vundle#end()
 " }
 
 " Powerline {
-
-    let hostname = substitute(system('hostname'), '\n', '', '')
-    if hostname == "shamu.coe.utsa.edu"
-        python sys.path.append("~/.local/lib/python2.7/site-packages/powerline/")
-    else
-        python sys.path.append("/usr/local/lib/python2.7/site-packages/powerline/")
-    endif
+    python sys.path.append("/usr/local/lib/python2.7/site-packages/powerline/")
     python from powerline.vim import setup as powerline_setup
     python powerline_setup()
     python del powerline_setup
@@ -68,22 +62,25 @@ call vundle#end()
     let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
 " }
 
+" UltiSnips {
+    let g:UltiSnipsExpandTrigger='<c-f>'
+    let g:UltiSnipsJumpForwardTrigger='<c-f>'
+    let g:UltiSnipsJumpBackwardTrigger='<c-d>'
+    inoremap <c-x><c-k> <c-x><c-k>
+" }
+
 " Screen {
     let g:ScreenImpl = 'Tmux'
 " }
 	
 " General {
-	set background=dark         " Assume a dark background
-	"set background=light       " Assume a dark background
+    set background=dark         " Assume a dark background
+    "set background=light       " Assume a light background
 	set term=xterm-256color     " Make arrow and other keys work
 	syntax on 					" syntax highlighting
     filetype on
 	filetype plugin indent on  	" Automatically detect file types.
 	set mouse=a					" automatically enable mouse usage
-	"set autochdir 				" always switch to the current file directory.. 
-	" not every vim is compiled with this, use the following line instead
-	" If you use command-t plugin, it conflicts with this, comment it out.
-     "autocmd BufEnter * if bufname("") !~ "^\[A-Za-z0-9\]*://" | lcd %:p:h | endif
 	set encoding=utf-8
 	set termencoding=utf-8
 	set autowrite                  " automatically write a file when leaving a modified buffer
@@ -94,17 +91,17 @@ call vundle#end()
 	set spell 		 	        	" spell checking on
 	
 	" Setting up the directories {
-		set backup 						" backups are nice ...
-		set backupdir=$HOME/.vimbackup//  " but not when they clog .
-		set directory=$HOME/.vimswap// 	" Same for swap files
-		set viewdir=$HOME/.vimviews// 	" same for view files
+    set backup 						" backups are nice ...
+    set backupdir=$HOME/.vimbackup//  " but not when they clog .
+    set directory=$HOME/.vimswap// 	" Same for swap files
+    set viewdir=$HOME/.vimviews// 	" same for view files
 		
-		"" Creating directories if they don't exist
-		silent execute '!mkdir -p $HOME/.vimbackup'
-		silent execute '!mkdir -p $HOME/.vimswap'
-		silent execute '!mkdir -p $HOME/.vimviews'
-		au BufWinLeave * silent! mkview  "make vim save view (state) (folds, cursor, etc)
-		au BufWinEnter * silent! loadview "make vim load view (state) (folds, cursor, etc)
+    "" Creating directories if they don't exist
+    silent execute '!mkdir -p $HOME/.vimbackup'
+    silent execute '!mkdir -p $HOME/.vimswap'
+    silent execute '!mkdir -p $HOME/.vimviews'
+    au BufWinLeave * silent! mkview  "make vim save view (state) (folds, cursor, etc)
+    au BufWinEnter * silent! loadview "make vim load view (state) (folds, cursor, etc)
 	" }
 " }
 
@@ -116,13 +113,6 @@ call vundle#end()
 	set cursorline  				" highlight current line
 	hi cursorline guibg=#333333 	" highlight bg color of current line
 	hi CursorColumn guibg=#333333   " highlight cursor
-
-	"if has('cmdline_info')
-		"set ruler                  	" show the ruler
-		"set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%) " a ruler on steroids
-		"set showcmd                	" show partial commands in status line and
-									"" selected characters/lines in visual mode
-	"endif
 
 	if has('statusline')
 		set laststatus=2           	" show statusline only if there are > 1 windows
@@ -242,8 +232,6 @@ call vundle#end()
     vmap <D-c> :w !pbcopy<CR><CR>
     set clipboard=unnamed
 
-    " Skim setup for forward-search
-    map <leader>r :w<CR>:silent !/Applications/Skim.app/Contents/SharedSupport/displayline <C-r>=line('.')<CR> %<.pdf %<CR>
 
 " }
 
