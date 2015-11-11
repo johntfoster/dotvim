@@ -37,7 +37,6 @@ Plugin 'dantler/vim-alternate'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'Raimondi/delimitMate'
 Plugin 'vim-scripts/Align'
-Plugin 'gerw/vim-latex-suite'
 Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'tyru/open-browser.vim'
 Plugin 'christoomey/vim-tmux-navigator'
@@ -46,6 +45,7 @@ Plugin 'benmills/vimux'
 Plugin 'wincent/command-t'
 Plugin 'ervandew/screen'
 Plugin 'dag/vim-fish'
+Plugin 'sjl/threesome'
 call vundle#end() 
 
 " }
@@ -120,7 +120,6 @@ call vundle#end()
 
 	set backspace=indent,eol,start 	" backspace for dummys
 	set linespace=0 				" No extra spaces between rows
-	set nu 							" Line numbers on
 	set showmatch                  	" show matching brackets/parenthesis
 	set incsearch 					" find as you type search
 	set hlsearch 					" highlight search terms
@@ -135,6 +134,24 @@ call vundle#end()
 	set foldenable  				" auto fold code
 	set gdefault					" the /g flag on :s substitutions by default
 
+" }
+
+" Line Numbering {
+    function! NumberToggle()
+        if(&relativenumber == 1)
+            set number
+        else 
+            set relativenumber
+        endif
+    endfunc
+
+    nnoremap <C-n> :call NumberToggle()<cr>
+
+    :au FocusLost * :set number
+    :au FocusGained * :set relativenumber
+
+    autocmd InsertEnter * :set number
+    autocmd InsertLeave * :set relativenumber
 " }
 
 " Formatting {

@@ -1,0 +1,21 @@
+snippet pgff "PGF Environment for Beamer Frames"
+\\begin{figure}[H]
+   \\centering
+   \\scalebox{${2:1.0}}{\\input{${1:filename}.pgf}}
+\\end{figure}
+$0
+endsnippet
+
+snippet pgf "PGF Figure Environment"
+\\begin{figure}[${5:tpb}]
+   \\centering
+   \\scalebox{${2:1.0}}{\\input{${1:filename}.pgf}}
+   \\caption{$3}
+   \\label{fig:$4}
+\\end{figure}
+$0
+endsnippet
+
+snippet ing "Include graphics line"
+\\includegraphics[width=${2:1.0}\\textwidth]{${1:file.ext}}
+endsnippet
