@@ -13,19 +13,22 @@
         if &shell =~# 'fish$'
             set shell=bash
         endif
+        if &shell =~# 'xonsh$'
+            set shell=bash
+        endif
 	" }
 
 " } 
 
 " Bundles {
 "
-set rtp+=~/.vim/bundle/vundle
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-Plugin 'scrooloose/syntastic'
+Plugin 'vim-syntastic/syntastic'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'gmarik/vundle'
+Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-markdown'
@@ -45,7 +48,7 @@ Plugin 'benmills/vimux'
 Plugin 'wincent/command-t'
 Plugin 'ervandew/screen'
 Plugin 'dag/vim-fish'
-Plugin 'sjl/threesome'
+Plugin 'rhysd/vim-clang-format'
 call vundle#end() 
 
 " }
@@ -59,7 +62,7 @@ call vundle#end()
 " }
 
 " YCM {
-    let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
+    let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 " }
 
 " UltiSnips {
@@ -69,6 +72,16 @@ call vundle#end()
     inoremap <c-x><c-k> <c-x><c-k>
 " }
 
+" vim-clang-format {
+    " map to <Leader>cf in C++ code
+    autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
+    autocmd FileType c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
+    " Toggle auto formatting:
+    nmap <Leader>C :ClangFormatAutoToggle<CR>
+
+    autocmd FileType c,cpp,objc  ClangFormatAutoEnable
+" }
+
 " Screen {
     let g:ScreenImpl = 'Tmux'
 " }
@@ -76,7 +89,7 @@ call vundle#end()
 " General {
     set background=dark         " Assume a dark background
     "set background=light       " Assume a light background
-	set term=xterm-256color     " Make arrow and other keys work
+    set term=xterm-256color     " Make arrow and other keys work
 	syntax on 					" syntax highlighting
     filetype on
 	filetype plugin indent on  	" Automatically detect file types.

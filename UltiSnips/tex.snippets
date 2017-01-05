@@ -21,8 +21,20 @@ snippet ing "Include graphics line"
 endsnippet
 
 snippet al "Align equation environment"
+%
 \\begin{align}
-$1
+$1 =& $2
+\\label{eqn:$3}
 \\end{align}
+%
+$0
+endsnippet
+
+snippet aln "Align equation environment without tags"
+%
+\\begin{align*}
+$1 =& $2
+\\end{align*}
+%
 $0
 endsnippet
