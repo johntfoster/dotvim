@@ -24,6 +24,7 @@
 "
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+Plugin 'lervag/vimtex'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
@@ -102,6 +103,7 @@ call vundle#end()
 	set virtualedit=onemore 	   	" allow for cursor beyond last character
 	set history=1000  				" Store a ton of history (default is 20)
 	set spell 		 	        	" spell checking on
+  
 	
 	" Setting up the directories {
     set backup 						" backups are nice ...
