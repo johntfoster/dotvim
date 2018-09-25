@@ -1,40 +1,32 @@
 Installation:
 
-````
+```
     git clone git://github.com/johntfoster/dotvim.git ~/.vim
-````
+```
 
 Create symlinks:
 
-````
+For vi/vim
+```
     ln -s ~/.vim/vimrc ~/.vimrc
-````
+```
 
-For powerline support, make sure you have `vim` built with `+python` and install
-powerline into your Python environment.
+For neovim
+```
+    ln -s ~/.vim/vimrc ~/.config/nvim/init.vim
+```
 
-````
-pip install powerline-status
-````
+Install vim-plug
+```
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+```
 
 
-Update Vundle submodule
-
-````
-    git submodule init
-    git submodule update
-````
-
-Update bundles:
+Update plugins from withing vim/nvim:
 
 ````
-    :PluginInstall!
-````
-
-Or from the command line:
-
-````
-    vim +PluginInstall +qall
+    :PlugInstall!
 ````
 
 You will need to then follow the installation instructions to build the required

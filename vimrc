@@ -9,57 +9,55 @@
 
 " Environment {
 	" Basics {
-		set nocompatible 		" must be first line
-        if &shell =~# 'fish$'
-            set shell=bash
-        endif
-        if &shell =~# 'xonsh$'
-            set shell=bash
-        endif
+	set nocompatible 		" must be first line
+    set shell=bash
 	" }
 
 " } 
 
-" Bundles {
-"
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'lervag/vimtex'
-Plugin 'vim-syntastic/syntastic'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/nerdtree'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-markdown'
-Plugin 'tomtom/tlib_vim'
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
-Plugin 'dantler/vim-alternate'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'Raimondi/delimitMate'
-Plugin 'vim-scripts/Align'
-Plugin 'vim-pandoc/vim-pandoc'
-Plugin 'tyru/open-browser.vim'
-Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'vim-scripts/jinja'
-Plugin 'benmills/vimux'
-Plugin 'wincent/command-t'
-Plugin 'ervandew/screen'
-Plugin 'dag/vim-fish'
-Plugin 'rhysd/vim-clang-format'
-call vundle#end() 
-
+" Plugins{
+call plug#begin('~/.vim/plugged')
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes' 
+Plug 'lervag/vimtex'
+Plug 'vim-syntastic/syntastic'
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree'
+Plug 'Valloric/YouCompleteMe'
+Plug 'VundleVim/Vundle.vim'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-markdown'
+Plug 'tomtom/tlib_vim'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'dantler/vim-alternate'
+Plug 'altercation/vim-colors-solarized'
+Plug 'jnurmine/zenburn'
+Plug 'Raimondi/delimitMate'
+Plug 'vim-scripts/Align'
+Plug 'vim-pandoc/vim-pandoc'
+Plug 'tyru/open-browser.vim'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'vim-scripts/jinja'
+Plug 'benmills/vimux'
+Plug 'wincent/command-t'
+Plug 'ervandew/screen'
+Plug 'dag/vim-fish'
+Plug 'rhysd/vim-clang-format'
+call plug#end() 
 " }
 
-" Powerline {
-    python sys.path.append("/usr/local/lib/python2.7/site-packages/powerline/")
-    python from powerline.vim import setup as powerline_setup
-    python powerline_setup()
-    python del powerline_setup
-    let g:Powerline_symbols = 'fancy'
+" Python {
+if has('nvim')
+    let g:python3_host_prog = '/usr/local/miniconda/envs/jupyterhub/bin/python'
+    let g:python_host_prog = '/usr/local/miniconda/envs/py27/bin/python'
+endif
+" }
+     
+" Airline {
+    let g:airline_solarized_bg='dark' 
 " }
 
 " YCM {
@@ -90,7 +88,6 @@ call vundle#end()
 " General {
     set background=dark         " Assume a dark background
     "set background=light       " Assume a light background
-    set term=xterm-256color     " Make arrow and other keys work
 	syntax on 					" syntax highlighting
     filetype on
 	filetype plugin indent on  	" Automatically detect file types.
@@ -121,7 +118,7 @@ call vundle#end()
 " }
 
 " Vim UI {
-	:silent! colorscheme solarized           " load a colorscheme
+	:silent! colorscheme zenburn " load a colorscheme
 	set tabpagemax=15 				" only show 15 tabs
 	set showmode                   	" display the current mode
 
