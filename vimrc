@@ -50,8 +50,8 @@ call plug#end()
 
 " Python {
 if has('nvim')
-    let g:python3_host_prog = '/usr/local/miniconda/envs/jupyterhub/bin/python'
-    let g:python_host_prog = '/usr/local/miniconda/envs/py27/bin/python'
+    let g:python3_host_prog = '/usr/local/miniconda3/envs/jupyterhub/bin/python'
+    let g:python_host_prog = '/usr/local/miniconda3/envs/py27/bin/python'
 endif
 " }
      
@@ -119,7 +119,7 @@ endif
 " }
 
 " Vim UI {
-	:silent! colorscheme zenburn " load a colorscheme
+	:silent! colorscheme zenburn    " load a colorscheme
 	set tabpagemax=15 				" only show 15 tabs
 	set showmode                   	" display the current mode
 
@@ -144,7 +144,6 @@ endif
 	set whichwrap=b,s,h,l,<,>,[,]	" backspace and cursor keys wrap to
 	set scrolljump=5 				" lines to scroll when cursor leaves screen
 	set scrolloff=3 				" minimum lines to keep above and below cursor
-	set foldenable  				" auto fold code
 	set gdefault					" the /g flag on :s substitutions by default
 
 " }
