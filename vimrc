@@ -185,7 +185,6 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 " }
 
-
 " fzf {
 "  set rtp+=/usr/local/opt/fzf
 " }
@@ -353,7 +352,6 @@ nmap <Leader>je <Plug>SlimeLineSend
 xmap <Leader>je <Plug>SlimeRegionSendeader>q :SlimeSend1 exit<CR>
 " }
 
-
 " Screen {
     let g:ScreenImpl = 'Tmux'
 " }
@@ -423,20 +421,21 @@ xmap <Leader>je <Plug>SlimeRegionSendeader>q :SlimeSend1 exit<CR>
 " }
 
 " Formatting {
-	set wrap                     	" wrap long lines
-	set textwidth=79                " set text length
-	set formatoptions=qrn1
-	set colorcolumn=80              " creates a color column at column 80
-	set autoindent                 	" indent at the same level of the previous line
-	set shiftwidth=4               	" use indents of 4 spaces
-	set expandtab   	       		" tabs are  spaces
-	set tabstop=4 					" an indentation every four columns
-	set matchpairs+=<:>            	" match, to be used with % 
-	set pastetoggle=<F12>          	" pastetoggle (sane indentation on pastes)
-	set comments=sl:/*,mb:*,elx:*/  " auto format comment blocks
-    set cmdheight=2                 " give more space for displaying messages
-    set updatetime=300              " have longer update time
-    set shortmess+=c                " don't pass messages to |ins-completion-menu|.
+set wrap                     	" wrap long lines
+set textwidth=79                " set text length
+set formatoptions=qrn1
+set colorcolumn=80              " creates a color column at column 80
+set autoindent                 	" indent at the same level of the previous line
+set shiftwidth=4               	" use indents of 4 spaces
+set expandtab   	       		" tabs are  spaces
+set tabstop=4 					" an indentation every four columns
+set matchpairs+=<:>            	" match, to be used with % 
+set pastetoggle=<F12>          	" pastetoggle (sane indentation on pastes)
+set comments=sl:/*,mb:*,elx:*/  " auto format comment blocks
+set cmdheight=2                 " give more space for displaying messages
+set updatetime=300              " have longer update time
+set shortmess+=c                " don't pass messages to |ins-completion-menu|.
+set lazyredraw
 " }
 
 " Project Specific RC  {
