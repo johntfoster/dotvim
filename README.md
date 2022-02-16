@@ -1,7 +1,7 @@
 Installation:
 
 ```
-    git clone git://github.com/johntfoster/dotvim.git ~/.vim
+    git clone git@github.com:johntfoster/dotvim.git ~/.vim
 ```
 
 Create symlinks:
