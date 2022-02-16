@@ -28,6 +28,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'jnurmine/zenburn'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'editorconfig/editorconfig-vim'
 Plug 'sheerun/vim-polyglot'
 "Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 call plug#end() 
@@ -280,9 +281,9 @@ let g:airline_powerline_fonts=1
 " jupytext {
 let g:jupytext_enable = 1
 let g:jupytext_command = 'jupytext'
-let g:jupytext_fmt = 'md'
-"let g:jupytext_fmt = 'py:percent'
-let g:jupytext_filetype_map = {'md': 'pandoc'}
+"let g:jupytext_fmt = 'md'
+"let g:jupytext_fmt = 'md:myst'
+"let g:jupytext_filetype_map = {'md': 'pandoc'}
 " }
 
 " ipython-cell {
