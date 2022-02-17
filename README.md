@@ -25,9 +25,7 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 
 Update plugins from withing vim/nvim:
 
-````
+```
     :PlugInstall!
-````
-
-You will need to then follow the installation instructions to build the required
-files for `YouCompleteMe` and `command-t`.
+    :CocInstall
+```
