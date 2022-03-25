@@ -29,3 +29,5 @@ Update plugins from withing vim/nvim:
     :PlugInstall!
     :CocInstall
 ```
+
+Demo
